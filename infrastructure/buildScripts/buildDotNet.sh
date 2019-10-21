@@ -1,4 +1,4 @@
-﻿#!/bin/bash
+#!/bin/bash
 CONTAINER_NAME=${1:?Must provide container name}
 CONTAINER_REGISTRY=${2:-"docker.io"}
 CONTAINER_TAG=${3:-"latest"}
@@ -37,4 +37,7 @@ docker tag  $CONTAINER_REGISTRY/$CONTAINER_NAME:$CONTAINER_TAG $CONTAINER_REGIST
 docker push $CONTAINER_REGISTRY/$CONTAINER_NAME:$CONTAINER_TAG
 docker push $CONTAINER_REGISTRY/$CONTAINER_NAME:$CONTAINER_GIT_TAG
 set +e
+
+
+
 
