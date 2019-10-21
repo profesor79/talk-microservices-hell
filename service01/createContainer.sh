@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-source ../infrastructure/buildScripts/buildScript.sh service01
+source ../infrastructure/buildScripts/buildDotNet.sh service01
 
 

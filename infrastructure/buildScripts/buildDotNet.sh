@@ -1,6 +1,6 @@
 #!/bin/bash
 CONTAINER_NAME=${1:?Must provide container name}
-CONTAINER_REGISTRY=${2:-"docker.io"}
+CONTAINER_REGISTRY=${2:-"profesor79"}
 CONTAINER_TAG=${3:-"latest"}
 git add *
 # stop script on error
