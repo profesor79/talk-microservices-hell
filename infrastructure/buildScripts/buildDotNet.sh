@@ -3,13 +3,10 @@ CONTAINER_NAME=${1:?Must provide container name}
 CONTAINER_REGISTRY=${2:-"profesor79"}
 CONTAINER_TAG=${3:-"latest"}
 git add *
-# stop script on error
-set -e
+
 # commit changes
 git commit -m "Automatic commit for container: $CONTAINER_NAME push started" -a
 
-# ignore errors here
-set +e
 
 for DIR in bin obj publish
 do
@@ -17,7 +14,7 @@ echo "deleting $DIR in $(pwd)"
  find  -type d -name $DIR  -exec rm -rf  {} +
 done
 # stop script on error
-set -e
+
 
 for script in *.csproj
 do
