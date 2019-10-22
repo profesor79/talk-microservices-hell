@@ -1,0 +1,24 @@
+﻿@startuml
+
+package "standard :)" {
+HTTPrequest - [server]
+
+}
+
+package "Kubernetes" {
+
+    package "load balancer"{
+        HttpRequest - [LoadBalancer]
+        package "service" {        
+        [ServicePort] - [LoadBalancer]
+                package pod1 {
+                [PodPort] - [ServicePort]
+                    package container01 {
+                        [Server] -- [PodPort]
+                    }                   
+                }
+            }
+    }
+}
+
+@enduml
