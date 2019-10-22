@@ -12,7 +12,7 @@ spec:
   selector:
     app: service01
   type: NodePort
-  
+
 ---
 
 apiVersion: apps/v1
@@ -23,11 +23,8 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: 'ldmwebapi'
+      app: service01
   template:
-    metadata:
-      labels:
-        app: service01
     spec:
       containers:
         - name: service01
