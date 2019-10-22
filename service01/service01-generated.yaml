@@ -25,6 +25,9 @@ spec:
     matchLabels:
       app: service01
   template:
+    metadata:
+      labels:
+        app: service01
     spec:
       containers:
         - name: service01
