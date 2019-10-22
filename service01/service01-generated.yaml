@@ -9,6 +9,9 @@ spec:
     - port: 5001
       targetPort: 5001
       protocol: TCP
+    - port: 443
+        targetPort: 443
+        protocol: TCP
   selector:
     app: service01
   type: NodePort
@@ -33,5 +36,10 @@ spec:
         - name: service01
           image: 'profesor79/service01:latest'
           ports:
+<<<<<<< HEAD
             - containerPort: 5001
+=======
+            - containerPort: 80
+            - containerPort: 443
+>>>>>>> 2bd7112eb81a9bbb94d2d159dcf94438c18e085d
 

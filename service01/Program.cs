@@ -21,7 +21,7 @@ namespace service01
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.UseUrls("http://0.0.0.0:80");
+                    webBuilder.UseUrls("http://0.0.0.0:80","https://0.0.0.0:443");
                 });
     }
 }
