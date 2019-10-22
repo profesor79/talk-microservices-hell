@@ -9,6 +9,9 @@ spec:
     - port: 80
       targetPort: 80
       protocol: TCP
+    - port: 443
+        targetPort: 443
+        protocol: TCP
   selector:
     app: service01
   type: NodePort
@@ -34,4 +37,5 @@ spec:
           image: 'profesor79/service01:latest'
           ports:
             - containerPort: 80
+            - containerPort: 443
 
