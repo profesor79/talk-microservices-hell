@@ -33,7 +33,7 @@ spec:
       containers:
         - name: 'ui-tunnel'
           image: 'profesor79/base-ui-container:latest'
-          command: ["cd /mnt/nekubetalkinfradiag/data/talk-microservices-hell/ui  && npm run start:tunnel"]
+          command: ["/mnt/nekubetalkinfradiag/data/talk-microservices-hell/ui/startTunnel.sh"]
 
           ports:
             - containerPort: 3000
