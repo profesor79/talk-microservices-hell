@@ -1,0 +1,33 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: service01-service
+  labels:
+    name: service01-service
+spec:
+  ports:
+    - port: 80
+      targetPort: 5000
+      protocol: TCP
+  selector:
+    app: service01
+  type: NodePort
+  ---
+  apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: service01
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: service01
+    spec:
+      containers:
+        - name: service01
+          image: 'profesor79/service01:latest'
+          ports:
+            - containerPort: 5000
+
