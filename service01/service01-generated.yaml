@@ -1,9 +1,9 @@
 ﻿apiVersion: v1
 kind: Service
 metadata:
-  name: service01-service
+  name: service01
   labels:
-    name: service01-service
+    name: service01
 spec:
   ports:
     - port: 80

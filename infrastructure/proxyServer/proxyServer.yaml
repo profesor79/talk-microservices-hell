@@ -1,0 +1,47 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+  name: proxy-base
+  labels:
+    name: proxy-base
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+      name: p-80
+    - port: 443
+      protocol: TCP
+      name: p-443
+    - port: 8080
+      protocol: TCP
+      name: p-8080
+
+  selector:
+    app: 'proxy-base'
+  type: NodePort
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 'proxy-base'
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: 'proxy-base'
+  template:
+    metadata:
+      labels:
+        app: 'proxy-base'
+    spec:
+      containers:
+        - name: 'proxy-base'
+          image: 'profesor79/proxy-server:latest'
+          ports:
+            - containerPort: 80
+            - containerPort: 443
+            - containerPort: 8080
+
+

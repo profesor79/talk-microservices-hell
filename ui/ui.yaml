@@ -1,0 +1,40 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+  name: ui
+  labels:
+    name: ui
+spec:
+  ports:
+    - port: 3000
+      targetPort: 3000
+      protocol: TCP
+      name: ui-3000
+  selector:
+    app: 'ui'
+  type: NodePort
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: 'ui'
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: 'ui'
+    spec:
+      containers:
+        - name: 'ui'
+          image: 'profesor79/base-ui-container:latest'
+          command: ["/startContainer.sh"]
+          securityContext:
+            allowPrivilegeEscalation: true
+            privileged: true
+          ports:
+            - containerPort: 3000
+
+

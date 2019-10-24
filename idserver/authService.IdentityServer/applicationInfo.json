@@ -1,0 +1,11 @@
+{
+ "gitBuildContainerTimeCommitId":"23a847e5cda8445b997b576fcb30f467eb3ba7f0",
+ "gitBranch":"feature/718-ui-reset-password", 
+ "timeStamp":"2019-10-04T11:50:15.322Z", 
+ "buildServer":
+	 {
+		"BuildOn":"Linux",
+		"Host":"borys-XPS-13-9370"
+	 }
+ }
+

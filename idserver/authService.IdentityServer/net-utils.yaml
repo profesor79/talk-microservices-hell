@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod        
+metadata:
+  name: 'network-utils'
+spec:
+  containers:
+   - name: 'network-utils'
+     image: 'amouat/network-utils'
+     imagePullPolicy: Always
+
+
+

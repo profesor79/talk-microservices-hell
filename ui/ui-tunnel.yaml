@@ -1,0 +1,47 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+  name: ui-tunnel
+  labels:
+    name: ui-tunnel
+spec:
+  ports:
+    - port: 3000
+      targetPort: 3000
+      protocol: TCP
+      name: ui-tunnel-3000
+  selector:
+    app: 'ui-tunnel'
+  type: NodePort
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 'ui-tunnel'
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: 'ui-tunnel'
+  template:
+    metadata:
+      labels:
+        app: 'ui-tunnel'
+    spec:
+      containers:
+        - name: 'ui-tunnel'
+          image: 'profesor79/base-ui-container:latest'
+          command: ["cd /mnt/nekubetalkinfradiag/data/talk-microservices-hell/ui  && npm run start:tunnel"]
+
+          ports:
+            - containerPort: 3000
+
+          volumeMounts:
+            - name: tunnel
+              mountPath: "/mnt/nekubetalkinfradiag/data/talk-microservices-hell/ui"
+      volumes:
+        - name: tunnel
+          hostPath:
+            path: '/data/talk-microservices-hell/ui'
