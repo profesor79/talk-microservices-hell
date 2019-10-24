@@ -71,9 +71,7 @@ export function HomePage({
           <H2>
             <FormattedMessage {...messages.startProjectHeader} />
           </H2>
-          <p>
             <FormattedMessage {...messages.startProjectMessage} />
-          </p>
         </CenteredSection>
         <Section>
           <H2>

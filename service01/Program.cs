@@ -24,7 +24,7 @@ namespace service01
                 {
                     webBuilder.UseStartup<Startup>();
                     webBuilder.UseKestrel(
-                        a => a.Listen(IPAddress.Any,80));
+                        a => a.Listen(IPAddress.Any, 80));
                 });
         }
     }
