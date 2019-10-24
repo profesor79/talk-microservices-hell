@@ -1,0 +1,11 @@
+{
+ "gitBuildContainerTimeCommitId":"17d07924b198ba0f04bef65a8ed5fb9c4b0183a1",
+ "gitBranch":"feature/auth", 
+ "timeStamp":"2019-09-20T11:52:38.158Z", 
+ "buildServer":
+	 {
+		"BuildOn":"Linux",
+		"Host":"p5520"
+	 }
+ }
+
