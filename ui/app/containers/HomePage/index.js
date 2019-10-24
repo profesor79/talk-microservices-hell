@@ -69,9 +69,13 @@ export function HomePage({
       <div>
         <CenteredSection>
           <H2>
+	  
             <FormattedMessage {...messages.startProjectHeader} />
           </H2>
-          <p>
+          
+	  <H2>test from ubunti29</H2>
+	  
+	  <p>
             <FormattedMessage {...messages.startProjectMessage} />
           </p>
         </CenteredSection>
