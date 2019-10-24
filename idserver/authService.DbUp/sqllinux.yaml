@@ -1,0 +1,44 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+  name: sqllinux
+  labels:
+    name: sqllinux
+spec:
+  ports:
+    - port: 1433
+      targetPort: 1433
+      protocol: TCP
+      name: sql
+  selector:
+    app: 'sqllinux'
+  type: NodePort
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 'sqllinux'
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: 'sqllinux'
+  template:
+    metadata:
+      labels:
+        app: 'sqllinux'
+    spec:
+      containers:
+        - name: 'sqllinux'
+          image: 'microsoft/mssql-server-linux:2017-latest'
+          imagePullPolicy: Always
+          env:
+            - name: ACCEPT_EULA
+              value: "Y"
+            - name: SA_PASSWORD
+              value: "<YourStrong!Passw0rd>"
+          ports:
+            - containerPort: 1433
+      
