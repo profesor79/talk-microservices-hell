@@ -38,13 +38,5 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 5000
-          volumeMounts:
-            - name: ne-dev-pegasus-logs
-              mountPath: "/storage/logs"
-
-      initContainers:
-        - name: 'auth-service-db-up'
-          image: 'profesor79/auth-service-db-up:latest'
-          imagePullPolicy: Always
 
 
