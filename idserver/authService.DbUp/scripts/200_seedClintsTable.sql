@@ -35,13 +35,13 @@ VALUES
 --[Enabled]
 1
 --,[ClientId]
-,'PegasusNext'
+,'Next'
 --,[ProtocolType]
 ,'oidc'
 --,[RequireClientSecret]
 ,0 --insecure client
 --,[ClientName]
-,'Pegasus Next'
+,'Next'
 --,[RequireConsent]
 ,0
 --,[AllowRememberConsent] 
@@ -119,7 +119,7 @@ values (
 )
 values(
 --	[PostLogoutRedirectUri] [nvarchar](2000) NOT NULL,
-'https://www.pegasusnext.info'
+'https://www.nosite.info'
 --	[ClientId] [int] NOT NULL(
 ,@insertedId
 );
@@ -130,7 +130,7 @@ insert into  [dbo].[ClientRedirectUris](
 )
 values(
 --	[RedirectUri] [nvarchar](2000) NOT NULL,
-'https://www.pegasusnext.info'
+'https://www.nositenext.info'
 --	[ClientId] [int] NOT NULL(
 ,@insertedId
 );
@@ -141,12 +141,12 @@ insert into [dbo].[ClientScopes](
 )
 values(
 --	[Scope] [nvarchar](200) NOT NULL,
-  'PegasusApplication'
+  'Application'
 --	[ClientId] [int] NOT NULL
 ,@insertedId
 ),(
 --	[Scope] [nvarchar](200) NOT NULL,
-  'PegasusAdminApplication'
+  'AdminApplication'
 --	[ClientId] [int] NOT NULL
 ,@insertedId
 ),(
