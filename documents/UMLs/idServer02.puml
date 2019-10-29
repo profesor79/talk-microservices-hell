@@ -1,0 +1,20 @@
+@startuml
+title IDServer4
+
+
+database SqlServer as sql {
+    [tables]
+}
+
+package "ID Server Web Api" as api{
+    [provider] <-->[tables]
+}
+note right of api
+This service is exposed as NodePort
+That means it is avaliable on all Nodes
+on port from 30000 to 32000
+This port can be set in service yaml file
+end note
+
+
+@enduml

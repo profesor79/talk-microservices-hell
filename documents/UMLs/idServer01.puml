@@ -1,19 +1,26 @@
 @startuml
-title IDServer4
+title IDServer4-init container
+
 
 
 database SqlServer as sql {
     [tables]
 }
 
+
+
 package "ID Server Web Api" as api{
-    [provider] <-->[tables]
+    package "Database Deploymnet" as db{
+        [tables] <-> [deployment scripts]: container Init
+    }
+
+    [provider] <->[tables]
 }
-note right of api
-This service is exposed as NodePort
-That means it is avaliable on Node
-ip address and port from 30000 to 32000
-This port can be set in service yaml
+note left of db
+Deployment will be executed every time
+when pod will be starting
+"init container" - ensures that main service will
+start only when init will exit with "0"
 end note
 
 
