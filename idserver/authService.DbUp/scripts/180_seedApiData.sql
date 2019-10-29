@@ -10,7 +10,7 @@
  -- [Enabled] [bit] NOT NULL,
 1
 --	[Name] [nvarchar](200) NOT NULL,
-,'PegasusApplication'
+,'Application'
 --	[Created] [datetime2](7) NOT NULL,
 ,GETUTCDATE()
 --	[NonEditable] [bit] NOT NULL
@@ -30,7 +30,7 @@ insert into  [dbo].[ApiScopes](
 	,[ApiResourceId]
 ) values (
 --[Name] [nvarchar](200) NOT NULL,
-'PegasusApplication'
+'Application'
 --[Required] [bit] NOT NULL,
 ,0
 --[Emphasize] [bit] NOT NULL,
@@ -53,7 +53,7 @@ insert into  [dbo].[ApiScopes](
  -- [Enabled] [bit] NOT NULL,
 1
 --	[Name] [nvarchar](200) NOT NULL,
-,'PegasusAdminApplication'
+,'AdminApplication'
 --	[Created] [datetime2](7) NOT NULL,
 ,GETUTCDATE()
 --	[NonEditable] [bit] NOT NULL
@@ -73,7 +73,7 @@ insert into  [dbo].[ApiScopes](
 	,[ApiResourceId]
 ) values (
 --[Name] [nvarchar](200) NOT NULL,
-'PegasusAdminApplication'
+'AdminApplication'
 --[Required] [bit] NOT NULL,
 ,0
 --[Emphasize] [bit] NOT NULL,
