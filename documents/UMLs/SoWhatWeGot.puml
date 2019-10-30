@@ -1,0 +1,26 @@
+﻿@startuml
+
+cloud "Kubernetes" {
+request -- [lb]
+
+        package Service {
+        [lb]
+            package Pod1 {
+                [web server 1]
+                [lb] --  [web server 1]
+            }
+            
+            package Pod2 {
+                [web server 2]
+                [lb] --  [web server 2]
+            }
+            package Pod3 {
+                [web server 3]
+                [lb] --  [web server 3]
+            }
+        }
+
+}
+
+
+@enduml

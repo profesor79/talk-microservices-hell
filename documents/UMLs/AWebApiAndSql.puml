@@ -1,0 +1,17 @@
+﻿@startuml
+
+node Kube {
+    package DbUp {
+        [create and seed ] 
+    }
+    
+    database SqlServer {
+        [create and seed ] --> [tables]        
+    }
+    
+    package WebApi {    
+    [First: ensure that we have data] --> [create and seed ]
+    [Then: read and write to] <-> [tables]   
+        }
+}
+@enduml
