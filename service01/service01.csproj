@@ -11,7 +11,7 @@
     <PackageReference Include="HtmlAgilityPack" Version="1.11.7" />
     <PackageReference Include="jose-jwt" Version="2.4.0" />
     <PackageReference Include="Microsoft.AspNetCore.Owin" Version="3.0.0" />
-    <PackageReference Include="Microsoft.Owin" Version="4.0.1" />
+    <PackageReference Include="Microsoft.Owin" Version="4.2.2" />
     <PackageReference Include="Nancy" Version="2.0.0" />
     <PackageReference Include="Nancy.Authentication.JwtBearer" Version="1.1.1" />
     <PackageReference Include="Nancy.Authentication.Stateless" Version="2.0.0" />
